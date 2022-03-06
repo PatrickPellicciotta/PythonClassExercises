@@ -1,13 +1,10 @@
-class student:
-    def __init__(self, name, id):
+class Student:
+    def __init__(self, name, student_id):
         self.name = name
-        self.id = id
+        self.student_id = student_id
         self.grades = []
 
-
-
     def add_grade(self, grade):
-
         if grade >= 90:
             self.grades.append(4.0)
         elif grade >= 80:
@@ -19,14 +16,11 @@ class student:
         else:
             self.grades.append(0.0)
 
-
-
-
     def get_gpa(self):
         return round(sum(self.grades)/len(self.grades), 2) if len(self.grades) > 0 else 0.0
 
     def __str__(self):
-        return f"{self.id}  {self.name},  {self.get_gpa()}"
+        return f"{self.student_id}  {self.name},  {self.get_gpa()}"
 
     def __gt__(self, other):
         return self.get_gpa() > other.get_gpa()

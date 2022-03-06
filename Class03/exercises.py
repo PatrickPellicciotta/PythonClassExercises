@@ -4,7 +4,8 @@
 # start an empty list of students
 # a method to add a student to the list of students
 
-from Student import student
+from student import Student
+
 
 class Course:
     def __init__(self, title, course_id):
@@ -12,8 +13,8 @@ class Course:
         self.course_id = course_id
         self.students = []
 
-    def add_student(self, name, id):
-        self.students.append(student(name, id))
+    def add_student(self, name, student_id):
+        self.students.append(Student(name, student_id))
 
     def __str__(self):
         out = ''
